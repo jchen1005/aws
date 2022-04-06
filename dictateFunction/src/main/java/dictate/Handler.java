@@ -114,7 +114,20 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
 
             // Creates a pre-signed URL for the MP3 file
             // TODO 3 BEGIN
-            
+
+            var presigner = S3Presigner.builder().build();
+            var url = presigner.presignGetObject(GetObjectPresignRequest.builder()
+                    .signatureDuration(Duration.ofMinutes(5))
+                    .getObjectRequest(GetObjectRequest.builder()
+                            .bucket(bucket)
+                            .key(key)
+                            .build())
+                    .build())
+                    .url();
+
+            response = url.toString();
+
+
             // TODO 3 END
             logger.info("generated url {}", response);
 
