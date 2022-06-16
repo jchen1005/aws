@@ -58,6 +58,7 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
         //TODO 1 END
         var queryResponse = dbAsyncClient.getItem(request).join();
         return queryResponse.item().get("Note").s();
+        System.out.println(10);
     }
 
     @Override
