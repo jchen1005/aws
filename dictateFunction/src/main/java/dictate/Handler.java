@@ -34,7 +34,12 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
             .build();
     private static final S3AsyncClient s3client = S3AsyncClient.builder()
             .build();
-    
+
+    System.out.println(2);
+        System.out.println(3);
+                System.out.println(4);
+
+
     private static String getNoteText(String tableName, String userName, String noteId) {
         var dbAsyncClient = DynamoDbAsyncClient.builder()
                 .build();
