@@ -26,6 +26,8 @@ import java.util.Map;
 
 public class Handler implements RequestHandler<Map<String, String>, String> {
 
+
+    System.out.print(1);
     private static final Logger logger = LoggerFactory.getLogger(Handler.class);
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static final PollyAsyncClient pollyclient = PollyAsyncClient.builder()
