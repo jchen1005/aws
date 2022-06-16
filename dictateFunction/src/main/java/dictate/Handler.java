@@ -44,6 +44,7 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
         var dbAsyncClient = DynamoDbAsyncClient.builder()
                 .build();
         System.out.println(6);
+        System.out.println(7);
 
         var key = new HashMap<String, AttributeValue>();
         key.put("UserId", AttributeValue.builder().s(userName).build());
