@@ -62,6 +62,7 @@ public class Handler implements RequestHandler<Map<String, String>, String> {
 
         System.out.println(11);
 
+        System.out.println(12);
     }
 
     @Override
